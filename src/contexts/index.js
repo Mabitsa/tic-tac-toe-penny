@@ -5,7 +5,9 @@ import { GameContextProvider } from "./GameContext"
 function Provider({children}) {
   return (
     <ThemeContextProvider>
-      <ThemeContextProvider>{children}</ThemeContextProvider>
+      <GameContextProvider>
+        <ThemeContextProvider>{children}</ThemeContextProvider>
+      </GameContextProvider>
     </ThemeContextProvider>
   )
 }

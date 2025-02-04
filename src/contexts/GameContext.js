@@ -4,12 +4,12 @@ export const GameContext = createContext({});
 export const GameContextProvider = (props) => {
     const [game, setGame] = useState({
         board: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-        Playey1: {
+        player1: {
             choice: "x",
             name: "Penny",
         },
 
-        Playey2: {
+        player2: {
             choice: "O",
             name: "Raen",
         },
@@ -18,11 +18,11 @@ export const GameContextProvider = (props) => {
 
     const updateBoard = (index) => {
         let updateBoard = game.board;
-        updateBoard[index] = "X";
+        updateBoard[index] = game.turn;
         setGame({
             ...game,
             board: updateBoard,
-            turn: game.turn === "X" ? "O" : "X,"
+            turn: game.turn === "X" ? "O" : "X"
         });
     };
 
