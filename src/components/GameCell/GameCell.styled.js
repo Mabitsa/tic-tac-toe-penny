@@ -10,4 +10,12 @@ export const CellStyle = styled.button`
     border-radius: 10px;
     box-shadow: 5px 10px ${(props) => props.theme.colors.grey};
     cursor: pointer;
+    padding: 3rem;
+
+    .outlineIcon {
+        path {
+            stroke: ${(props) => props.theme.colors.primary};
+            stroke-width: 2;
+        }
+    }
 `;
